@@ -1,3 +1,4 @@
+#Alejandro Lopez y Veronica Blazquez
 class NodoCircular:
     def __init__(self, dato):
         self.dato = dato
