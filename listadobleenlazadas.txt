@@ -1,0 +1,38 @@
+Listas Doblemente Enlazadas
+
+Diferencia entre lista simplemente enlazada y doblemente enlazada
+Una lista simplemente enlazada utiliza nodos que contienen un único puntero (next) que
+apunta al siguiente nodo en la secuencia. Esto permite recorrer la lista en una sola
+dirección, desde el inicio hasta el final. En cambio, una lista doblemente enlazada
+incluye dos punteros en cada nodo: uno al siguiente nodo (next) y otro al anterior
+(prev). Esta estructura permite recorrer la lista en ambas direcciones (hacia adelante y hacia atrás),
+lo que facilita operaciones como la búsqueda o eliminación en contextos donde se requiere acceder a nodos
+previos sin necesidad de recorrer toda la lista desde el principio.
+
+Ventajas y desventajas
+La principal ventaja de una lista doblemente enlazada es su flexibilidad para navegar en ambas direcciones,
+lo que optimiza operaciones como la eliminación de nodos específicos o inserciones en posiciones anteriores
+sin depender de recorridos lineales. Esto es especialmente útil en aplicaciones como navegadores web (historial de páginas)
+o editores de texto (deshacer/rehacer acciones). Sin embargo, esta ventaja implica un mayor consumo de memoria debido al
+almacenamiento del puntero prev, y una mayor complejidad en la implementación, ya que cada operación de inserción
+o eliminación requiere actualizar dos punteros en lugar de uno, lo que puede aumentar el riesgo de errores.
+
+Inserción de un nodo
+Para insertar un nodo en una lista doblemente enlazada, primero se crea el nuevo nodo. Luego, se ajustan los
+punteros next y prev del nodo nuevo y de los nodos adyacentes. Por ejemplo, si se inserta entre dos nodos existentes (A y B),
+el next del nuevo nodo apuntará a B, y su prev apuntará a A. Simultáneamente, el next de A se actualiza para apuntar al nuevo nodo,
+y el prev de B se modifica para referenciarlo. Si la inserción es al inicio o al final, también se actualizan los
+punteros de la cabeza (head) o cola (tail) de la lista.
+
+Cambios al eliminar un nodo
+Al eliminar un nodo, se deben reasignar los punteros de los nodos vecinos para mantener la integridad de la lista.
+Si el nodo a eliminar está entre dos nodos (A y B), el next de A se redirige al nodo B, y el prev de B se ajusta para apuntar a A.
+Si el nodo eliminado es la cabeza, la nueva cabeza será su nodo next, y si es la cola, la nueva cola será su nodo prev.
+Es crucial manejar casos especiales, como cuando la lista queda vacía o el nodo eliminado es el único existente.
+
+Eficiencia frente a arrays
+Las listas doblemente enlazadas son más eficientes que los arrays en escenarios que requieren inserciones o eliminaciones
+frecuentes en posiciones intermedias. En un array, estas operaciones implican desplazar elementos, lo que tiene un costo
+de tiempo lineal (O(n)). En contraste, una lista doblemente enlazada permite realizar estas operaciones en tiempo constante
+(O(1)) una vez localizado el nodo, ya que solo se modifican punteros. Esto las hace ideales para implementar colas o pilas
+dinámicas, gestionar historiales o en algoritmos que requieren reorganización constante de datos.

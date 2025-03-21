@@ -1,0 +1,35 @@
+Listas Circulares
+
+Inserción en una lista circular
+En una lista circular, la inserción de un nodo requiere ajustar los punteros para mantener
+la estructura cerrada. Si la lista está vacía, el nuevo nodo apunta a sí mismo en ambos sentidos
+(next y prev en caso de ser doble). Si ya existen nodos, el nuevo nodo se enlaza con el último
+nodo (que apunta al primero) y el primero, actualizando sus punteros. Por ejemplo, en una lista
+circular doble, el prev del nuevo nodo apunta al último nodo existente, su next apunta al
+primer nodo, y los punteros del último y primer nodo se actualizan para incluir al nuevo nodo en la secuencia.
+
+Eliminación sin romper la estructura
+Para eliminar un nodo en una lista circular, se redirigen los punteros de los nodos adyacentes para
+que se salteen el nodo eliminado. Si el nodo eliminado es el único en la lista, se establece la lista
+como vacía. En una lista circular doble, esto implica actualizar el next del nodo anterior para que
+apunte al nodo siguiente del eliminado, y el prev del nodo siguiente para que apunte al nodo anterior.
+Esto asegura que la lista siga siendo circular y no queden referencias inválidas.
+
+Recorrido sin bucles infinitos
+Para recorrer una lista circular sin caer en un bucle infinito, se utiliza un nodo de referencia (como head)
+como punto de inicio y fin. El recorrido comienza en este nodo y finaliza cuando, después de avanzar,
+se regresa al mismo. En implementaciones prácticas, se puede usar un bucle while que compare el nodo
+actual con el nodo inicial, deteniéndose cuando coincidan después de al menos una iteración.
+
+Aplicaciones comunes
+Las listas circulares son útiles en aplicaciones donde los datos deben ciclarse continuamente.
+Por ejemplo, en sistemas operativos para la planificación de procesos mediante el algoritmo Round-Robin,
+en buffers cíclicos para gestión de flujos de datos (como audio o video), o en juegos donde elementos
+se repiten en un orden fijo (como turnos de jugadores). También se emplean en interfaces de usuario
+para listas de reproducción en bucle o carruseles de imágenes.
+
+Lista doblemente enlazada circular
+Para convertir una lista doblemente enlazada en circular, se ajustan los punteros del último y primer nodo.
+El next del último nodo apunta al primer nodo (cabeza), y el prev del primer nodo apunta al último nodo.
+Esto crea un ciclo bidireccional, permitiendo recorrer la lista infinitamente en ambas direcciones.
+Esta estructura combina las ventajas de las listas dobles (navegación bidireccional) con las circulares (acceso continuo sin fin).
