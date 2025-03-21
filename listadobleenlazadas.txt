@@ -1,3 +1,5 @@
+Alejandro Lopez y Veronica Blazquez
+
 Listas Doblemente Enlazadas
 
 Diferencia entre lista simplemente enlazada y doblemente enlazada
