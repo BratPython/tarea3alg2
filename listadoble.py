@@ -1,3 +1,5 @@
+#Alejandro Lopez y Veronica Blazquez
+
 class Nodo:
     def __init__(self, dato):
         self.dato = dato
