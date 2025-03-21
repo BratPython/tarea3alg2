@@ -1,3 +1,5 @@
+Alejandro Lopez y Veronica Blazquez
+
 Listas Circulares
 
 Inserción en una lista circular
